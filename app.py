@@ -281,18 +281,26 @@ Enter a stock ticker to fetch peer companies and display:
 
 from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer, GenerationConfig
 
-model_name = "andrewnap211/distilbart-cnn-12-6-local"
 
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-generation_config = GenerationConfig.from_pretrained(model_name)
+hf_token = "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"
 
 summarizer = pipeline(
     "summarization",
-    model=model,
-    tokenizer=tokenizer,
-    generation_config=generation_config
-)
+    model="sshleifer/distilbart-cnn-12-6",
+    use_auth_token=hf_token
+
+#model_name = "andrewnap211/distilbart-cnn-12-6-local"
+
+#model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+#tokenizer = AutoTokenizer.from_pretrained(model_name)
+#generation_config = GenerationConfig.from_pretrained(model_name)
+
+#summarizer = pipeline(
+   # "summarization",
+    #model=model,
+   # tokenizer=tokenizer,
+   # generation_config=generation_config
+#)
 
 
 #summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
