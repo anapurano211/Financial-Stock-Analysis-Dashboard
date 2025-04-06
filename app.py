@@ -277,10 +277,26 @@ Enter a stock ticker to fetch peer companies and display:
 """)
 
 # === News Sentiment Section ===
-from transformers import pipeline
+#from transformers import pipeline
+
+from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer, GenerationConfig
+
+model_name = "andrewnap211/distilbart-cnn-12-6-local"
+
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+generation_config = GenerationConfig.from_pretrained(model_name)
+
+summarizer = pipeline(
+    "summarization",
+    model=model,
+    tokenizer=tokenizer,
+    generation_config=generation_config
+)
+
 
 #summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
-summarizer = pipeline("summarization", model="andrewnap211/distilbart-cnn-12-6-local")
+#summarizer = pipeline("summarization", model="andrewnap211/distilbart-cnn-12-6-local")
 sentiment_analyzer = pipeline("text-classification", model="ProsusAI/finbert")
 
 
