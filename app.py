@@ -279,7 +279,8 @@ Enter a stock ticker to fetch peer companies and display:
 # === News Sentiment Section ===
 from transformers import pipeline
 
-summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+#summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+summarizer = pipeline("summarization", model="andrewnap211/distilbart-cnn-12-6-local")
 sentiment_analyzer = pipeline("text-classification", model="ProsusAI/finbert")
 
 
