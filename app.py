@@ -287,7 +287,7 @@ hf_token = "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"
 summarizer = pipeline(
     "summarization",
     model="sshleifer/distilbart-cnn-12-6",
-    use_auth_token=hf_token
+    use_auth_token=hf_token)
 
 #model_name = "andrewnap211/distilbart-cnn-12-6-local"
 
