@@ -48,6 +48,19 @@ This app leverages pre-trained large language models (LLMs) from Hugging Face Tr
 
 These models help provide a quick snapshot of how the media is reacting to a stock without reading through each article.
 
+### 🧠 GPT-Based Earnings Call Summarizer
+
+The app features a GPT-3.5-turbo-powered module that automatically summarizes the latest earnings call transcript for the top recommended stock. It retrieves the transcript via the Financial Modeling Prep API, processes the content with OpenAI’s GPT, and extracts insights across the following sections:
+
+1. 📊 Key Financial Results
+2. 🗣️ Executive Commentary
+3. 🔭 Forward Guidance
+4. 🎤 Analyst Q&A Highlights
+5. 🧠 Sentiment Analysis
+
+The summary is structured using a custom prompt tailored to financial analysis and sentiment interpretation. This enables quick comprehension of earnings reports directly within the dashboard interface. A sentiment icon (🟢 Positive / ⚪ Neutral / 🔴 Negative) is shown based on GPT interpretation.
+
+
 ---
 
 ## 🧪 How It Works
