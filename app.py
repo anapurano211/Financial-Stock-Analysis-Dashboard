@@ -17,8 +17,8 @@ warnings.filterwarnings('ignore')
 pd.set_option('display.max_columns', None)
 
 # === CONFIG ===
-API_KEY = '3c42fc6567276d6d31b84b10e283828e'
-OPENAI_API_KEY = "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" 
+API_KEY = 'YOUR FMP API KEY'
+OPENAI_API_KEY = "YOUR OPENAI KEY" 
 MODEL_ID = "gpt-3.5-turbo"
 client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
